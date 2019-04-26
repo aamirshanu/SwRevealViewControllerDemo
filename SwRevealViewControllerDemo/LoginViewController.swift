@@ -24,7 +24,15 @@ class LoginViewController: UIViewController {
         txtPassword.attributedPlaceholder = NSAttributedString(string: "   Password",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtPassword.layer.borderColor = UIColor.white.cgColor
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
     }
 
+    @IBAction func btnLogin(_ sender: UIButton) {
+        
+        if txtEmail.text == "test" && txtPassword.text == "123456"{
+            performSegue(withIdentifier: "go", sender: sender)
+        }else{
+            print("Error")
+        }
+    }
 }

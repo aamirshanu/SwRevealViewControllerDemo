@@ -13,6 +13,8 @@
 		04132DCE2272E71100532B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04132DCD2272E71100532B14 /* Assets.xcassets */; };
 		04132DD12272E71100532B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04132DCF2272E71100532B14 /* LaunchScreen.storyboard */; };
 		04132DD9227309F300532B14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04132DD8227309F300532B14 /* LoginViewController.swift */; };
+		04132DDD22731FB000532B14 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04132DDC22731FAF00532B14 /* SWRevealViewController.m */; };
+		04132E0122734CF200532B14 /* OneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04132E0022734CF200532B14 /* OneTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		04132DD02272E71100532B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04132DD22272E71100532B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04132DD8227309F300532B14 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04132DDA22731FAE00532B14 /* SwRevealViewControllerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwRevealViewControllerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		04132DDB22731FAF00532B14 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		04132DDC22731FAF00532B14 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		04132E0022734CF200532B14 /* OneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +63,16 @@
 			isa = PBXGroup;
 			children = (
 				04132DC62272E71000532B14 /* AppDelegate.swift */,
+				04132DDB22731FAF00532B14 /* SWRevealViewController.h */,
+				04132DDC22731FAF00532B14 /* SWRevealViewController.m */,
 				04132DC82272E71000532B14 /* ViewController.swift */,
 				04132DCA2272E71000532B14 /* Main.storyboard */,
 				04132DCD2272E71100532B14 /* Assets.xcassets */,
 				04132DCF2272E71100532B14 /* LaunchScreen.storyboard */,
 				04132DD22272E71100532B14 /* Info.plist */,
 				04132DD8227309F300532B14 /* LoginViewController.swift */,
+				04132DDA22731FAE00532B14 /* SwRevealViewControllerDemo-Bridging-Header.h */,
+				04132E0022734CF200532B14 /* OneTableViewCell.swift */,
 			);
 			path = SwRevealViewControllerDemo;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 				TargetAttributes = {
 					04132DC22272E71000532B14 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -141,6 +152,8 @@
 				04132DD9227309F300532B14 /* LoginViewController.swift in Sources */,
 				04132DC92272E71000532B14 /* ViewController.swift in Sources */,
 				04132DC72272E71000532B14 /* AppDelegate.swift in Sources */,
+				04132E0122734CF200532B14 /* OneTableViewCell.swift in Sources */,
+				04132DDD22731FB000532B14 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwRevealViewControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,6 +306,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwRevealViewControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwRevealViewControllerDemo/SwRevealViewControllerDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwRevealViewControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwRevealViewControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwRevealViewControllerDemo/SwRevealViewControllerDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
