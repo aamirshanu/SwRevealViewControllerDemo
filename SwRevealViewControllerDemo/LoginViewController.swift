@@ -16,11 +16,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
         txtEmail.setPadding()
         txtPassword.setPadding()
-
-        vc.setSWRevealAsRoot()
         txtEmail.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtEmail.layer.borderColor = UIColor.white.cgColor
@@ -35,8 +34,12 @@ class LoginViewController: UIViewController {
         
         if txtEmail.text == "test" && txtPassword.text == "123456"{
           
-           
-            vc.setSWRevealAsRoot()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+            navigationController?.pushViewController(vc, animated: true)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.switchViewControllers()
+        
         }else{
             print("Error")
         }

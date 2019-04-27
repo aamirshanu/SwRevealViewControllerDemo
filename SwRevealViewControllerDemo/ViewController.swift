@@ -16,7 +16,11 @@ class ViewController: UIViewController  {
     @IBOutlet weak var btnBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = self
         // Do any additional setup after loading the view, typically from a nib.
+        
         btnBarButton.target = revealViewController()
         btnBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

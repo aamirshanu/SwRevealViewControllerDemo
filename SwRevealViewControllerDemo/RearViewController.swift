@@ -15,7 +15,11 @@ class RearViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func btnLogout(_ sender: UIButton) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchBack()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

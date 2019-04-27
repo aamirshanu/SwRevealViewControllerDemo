@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //setSWRevealAsRoot()
-       // window?.rootViewController
+       
         return true
     }
 
@@ -43,13 +42,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func setSWRevealAsRoot() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        let navController = UINavigationController(rootViewController: vc)
-//        let revealVC = SWRevealViewController(rearViewController: RearViewController, frontViewController: ViewController)
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+//    func setSWRevealAsRoot() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+//        let navController = UINavigationController(rootViewController: vc)
+////        let revealVC = SWRevealViewController(rearViewController: RearViewController, frontViewController: ViewController)
+//        window?.rootViewController = vc
+//        window?.makeKeyAndVisible()
+//    }
+//
+    func switchViewControllers() {
+        
+        // switch root view controllers
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        
+        self.window?.rootViewController = nav
+        
+    }
+    
+    func switchBack() {
+        
+        // switch back to view controller 1
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        self.window?.rootViewController = nav
     }
 
 
