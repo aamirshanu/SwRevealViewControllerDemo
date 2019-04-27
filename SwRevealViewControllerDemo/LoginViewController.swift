@@ -34,11 +34,13 @@ class LoginViewController: UIViewController {
         
         if txtEmail.text == "test" && txtPassword.text == "123456"{
           
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.switchViewControllers()
+            
             let vc = storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
             navigationController?.pushViewController(vc, animated: true)
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.switchViewControllers()
+            
         
         }else{
             print("Error")
