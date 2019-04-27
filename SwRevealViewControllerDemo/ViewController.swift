@@ -8,44 +8,55 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController  {
 
-  
-   
-    var nameArr = ["Appointments", "Call"]
-    @IBOutlet weak var tableViewTwo: UITableView!
-    @IBOutlet weak var tableViewOne: UITableView!
+    
+    @IBOutlet weak var tableTwo: UITableView!
+    @IBOutlet weak var tableOne: UITableView!
     @IBOutlet weak var btnBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         btnBarButton.target = revealViewController()
         btnBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
-        navigationController?.navigationBar.barTintColor = UIColor.blue
-        tabBarController?.tabBar.tintColor = UIColor.white
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+extension ViewController :  UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == tableOne{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+            return cell!
+        }else if tableView == tableTwo{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+            return cell!
+        }
+        return UITableViewCell()
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == tableTwo{
+            return 2
+        }else if tableView == tableOne{
+            return 2
+        }
+        return 1
+    }
 }
-//extension ViewController: UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return nameArr.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for: indexPath) as! OneTableViewCell
-//        
-//        cell.lblName.text = nameArr[indexPath.row]
-//        //cell.lblNo.text = "\(10)"
-//        
-//        return cell
-//    }
-//    
-//    
-//}
+extension ViewController: UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
 

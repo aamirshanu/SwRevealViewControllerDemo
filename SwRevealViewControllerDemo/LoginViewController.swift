@@ -10,18 +10,22 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+     let vc = AppDelegate()
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        txtEmail.setPadding()
+        txtPassword.setPadding()
 
-        txtEmail.attributedPlaceholder = NSAttributedString(string: "   Email",
+        vc.setSWRevealAsRoot()
+        txtEmail.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtEmail.layer.borderColor = UIColor.white.cgColor
         
-        txtPassword.attributedPlaceholder = NSAttributedString(string: "   Password",
+        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtPassword.layer.borderColor = UIColor.white.cgColor
         //navigationController?.navigationBar.isHidden = true
@@ -30,9 +34,19 @@ class LoginViewController: UIViewController {
     @IBAction func btnLogin(_ sender: UIButton) {
         
         if txtEmail.text == "test" && txtPassword.text == "123456"{
-            performSegue(withIdentifier: "go", sender: sender)
+          
+           
+            vc.setSWRevealAsRoot()
         }else{
             print("Error")
         }
+    }
+}
+extension UITextField{
+    
+    func setPadding(){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
     }
 }
